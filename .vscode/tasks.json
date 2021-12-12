@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "C/C++: g++ 활성 파일 빌드",
+      "command": "g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "${file}",
+        "${workspaceRoot}\\src\\glad.c",
+        "-o",
+        "${workspaceRoot}\\build\\${fileBasenameNoExtension}.exe",
+        "-I${workspaceRoot}\\include",
+        "-L${workspaceRoot}\\lib",
+        "-static",
+        "-lglfw3",
+        "-lgdi32",
+        "-lopengl32",
+        "-l:libassimp.dll.a",
+        "-l:libIrrXML.a"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "컴파일러: g++"
+    }
+  ]
+}
